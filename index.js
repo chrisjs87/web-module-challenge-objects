@@ -32,6 +32,8 @@ Test your createMenuItems function by doing the following:
 // console.log(createMenuItems('Scotch Eggs', 8, 'Lunch'));
 // console.log(createMenuItems('Eggs Benedict', 15, 'Breakfast'));
 // console.log(createMenuItems('Tacos', 9, 'Lunch'));
+// ************************************** NOTE ***************************************
+// Having the above uncommented breaks the tests. Will not leave this uncommented.
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -50,7 +52,13 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function(customer){
+    if(customer === 'teacher' || customer === 'student'){
+      return this.price - (this.price*0.25);
+    }else{
+      return this.price - (this.price*0.10);
+    }
+  }
 }
 
 
